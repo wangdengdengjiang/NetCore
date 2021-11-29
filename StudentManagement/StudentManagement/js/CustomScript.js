@@ -1,0 +1,1 @@
+﻿<script>window.location.href = "/Views/Home";</script>

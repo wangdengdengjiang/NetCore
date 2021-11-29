@@ -1,0 +1,39 @@
+﻿@* 使用@model 指令指定模型类型 *@
+@model IEnumerable<Student>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>班级</td>
+                <td>邮箱 </td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 强类型视图 -->
+            @* 使用@Model 访问模型对象属性 *@
+            @foreach (var Student in Model)
+            {
+            <tr>
+                <td>@Student.Id</td>
+                <td>@Student.Name</td>
+                <td>@Student.ClassName</td>
+                <td>@Student.Email</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    
+
+
+
+</body>
+</html>
+

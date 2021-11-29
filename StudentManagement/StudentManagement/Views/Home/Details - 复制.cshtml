@@ -1,0 +1,36 @@
+﻿@using StudentManagement.Modles
+@* 使用@model 指令指定模型类型 *@
+@*@model  StudentManagement.Modles.Student*@
+
+@model StudentManagement.ViewModel.HomeDetailsViewModel
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <!-- 弱类型视图 -->
+    @*<h3>@ViewData["PageTitle"]</h3>*@
+    @*<h3>@ViewBag.PageTitle</h3>*@
+
+    @*@{
+            var student = ViewData["Student"] as Student;  //显示 转换为Stuudent类型（强转换）
+        }*@
+    @*<div>Name: @student.Name</div>
+        <div>Email:  @student.Email</div>
+        <div>ClassName: @student.ClassName</div>*@
+    @*<div>Name: @ViewBag.Student.Name</div>
+        <div>Email:  @ViewBag.Student.Email</div>
+        <div>ClassName: @ViewBag.Student.ClassName</div>*@
+
+    <!-- 强类型视图 -->
+    @* 使用@Model 访问模型对象属性 *@
+    <h3>@Model.PageTitle</h3>
+    <div>Name: @Model.Student.Name</div>
+    <div>Email:  @Model.Student.Email</div>
+    <div>ClassName: @Model.Student.ClassName</div>
+
+
+</body>
+</html>
+
