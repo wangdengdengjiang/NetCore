@@ -11,9 +11,9 @@ namespace StudentManagement.Modles
         public MokeStudentInterface()
         {
             _students = new List<Student>() {
-                new Student(){Id = "1", Name = "李一一",ClassName = ClassNameEnum.FirstClass, Email="liyiyi@53.com" },
-                new Student(){Id = "2", Name = "王小二",ClassName =ClassNameEnum.SecondClass, Email="wangxiaoer@53.com" },
-                new Student(){Id = "3", Name = "张三生",ClassName = ClassNameEnum.ThirdClass, Email="zhangsanshewng@53.com" }
+                new Student(){Id = 1, Name = "李一一",ClassName = ClassNameEnum.FirstClass, Email="liyiyi@53.com" },
+                new Student(){Id = 2, Name = "王小二",ClassName =ClassNameEnum.SecondClass, Email="wangxiaoer@53.com" },
+                new Student(){Id = 3, Name = "张三生",ClassName = ClassNameEnum.ThirdClass, Email="zhangsanshewng@53.com" }
             };
         }
 
@@ -22,7 +22,7 @@ namespace StudentManagement.Modles
             return _students;
         }
 
-        public Student GetStudent(string Id)
+        public Student GetStudent(int Id)
         {
             return _students.FirstOrDefault(a => a.Id == Id);
         }

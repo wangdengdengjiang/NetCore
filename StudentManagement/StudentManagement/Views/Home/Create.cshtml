@@ -1,34 +1,45 @@
 ﻿@model Student
+@inject IStudentInterface _IStudentInterface;
 @{
     ViewBag.Title = "新增学生信息页面";
 }
 
 <form asp-controller="home" asp-action="create" method="post">
-
-    <div asp-validation-summary="All"></div>
+    @* 标签显示验证错误信息 *@
+    <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="form-group row">
         <label asp-for="Name" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
             <input asp-for="Name" class="form-control" placeholder="请输入学生姓名" />
-            <span asp-validation-for="Name"></span>
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
         <label asp-for="Email" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
             <input asp-for="Email" class="form-control" placeholder="请输入学生邮箱" />
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
         <label asp-for="ClassName" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <select asp-for="ClassName" asp-items="Html.GetEnumSelectList<ClassNameEnum>()" class="custom-select mr-md-2"></select>
+            <select asp-for="ClassName" asp-items="Html.GetEnumSelectList<ClassNameEnum>()" class="custom-select mr-md-2">
+                <option value="">请选择</option>
+            </select>
+            <span asp-validation-for="ClassName" class="text-danger"></span>
         </div>
     </div>
 
     <div>
         <button type="submit" class="btn-primary">提交</button>
+    </div>
+
+    <div class="">
+        <div>
+           学生信息总人数 = @_IStudentInterface.getAllStudent().Count().ToString()
+        </div>
     </div>
 
 </form>

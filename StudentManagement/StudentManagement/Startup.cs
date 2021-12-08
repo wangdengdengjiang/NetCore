@@ -35,7 +35,9 @@ namespace StudentManagement
             services.AddScoped<MessageService>();
 
             //依赖注入，将接口和实现关联在一起
-            services.AddSingleton<IStudentInterface, MokeStudentInterface>();
+            //services.AddSingleton<IStudentInterface, MokeStudentInterface>();
+            //services.AddScoped<IStudentInterface, MokeStudentInterface>();
+            services.AddTransient<IStudentInterface, MokeStudentInterface>();
         }
 
         //中间件：处理和接收http响应的管道

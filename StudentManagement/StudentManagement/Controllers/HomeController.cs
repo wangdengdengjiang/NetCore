@@ -48,7 +48,7 @@ namespace StudentManagement.Controllers
         //[Route("Weak")]
         //[Route("[action]")]
         public ActionResult Weak() {
-            Student student = _studentInterface.GetStudent("1");
+            Student student = _studentInterface.GetStudent(1);
             //将数据从控制器传递到视图
             //1、ViewData
             //ViewData["PageTitle"] = "Student Details";
@@ -70,14 +70,14 @@ namespace StudentManagement.Controllers
         //[Route("Details/{id?}")]
         //[Route("[action]/{id?}")]
         [Route("{id?}")]
-        public IActionResult Details(string id)   //会去找同名的视图
+        public IActionResult Details(int id)   //会去找同名的视图
         {
-            //id = (id.Equals(0)) ? 1 : id;
+            id = (id.Equals(0)) ? 1 : id;
             //Student model = _studentInterface.GetStudent(1);
             HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
             {
                 //最初id 为int 类型，但是无法实现id ?? 1 ，因为int 不能被赋值为null
-                Student = _studentInterface.GetStudent(id ?? "1"),
+                Student = _studentInterface.GetStudent(id),
                 PageTitle = "学生详情页面"
             };
             return View(homeDetailsViewModel); //View是由 Controller 所提供的视图文件
@@ -86,7 +86,6 @@ namespace StudentManagement.Controllers
         [HttpGet]  //区分两个Create，一个get请求，一个post请求
         public IActionResult Create()
         {
-
             return View();
         }
 
@@ -94,13 +93,13 @@ namespace StudentManagement.Controllers
         //public RedirectToActionResult Create(Student student)
         public IActionResult Create(Student student)
         {
+            //属性验证
             if (ModelState.IsValid)
             { 
                  Student newStudent = _studentInterface.Add(student);
-                return View("Details", new { id = newStudent.Id });
+                //return RedirectToAction("Details", new { id = newStudent.Id });
             }
             return View();
-           
         }
 
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XfByISM8LMvlhNcnueQpbfjI0/ZFplr32/QpT8GbGpHKCKhbjg4UZ1zUc8gJkgsxKlmCDJNyGhvSiuAtc8ggpg==",
+  "dgSpecHash": "hHC/U00jcsFkBFtZ4Lk4XXgEKikGMPR+G7CusCjJkJKOvxZyjmxDdbDgSnj4Tv43nm3+Cb8VyOGV2Sis+ytQQw==",
   "success": true,
-  "projectFilePath": "E:\\2_CodeLearn_Danielle\\GitCode\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+  "projectFilePath": "E:\\2_CodeLearn_Danielle\\GitHubCode\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\B0098098\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\B0098098\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

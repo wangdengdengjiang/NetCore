@@ -10,7 +10,7 @@ namespace StudentManagement.Modles
     /// </summary>
     public interface IStudentInterface
     {
-        Student GetStudent(string Id);
+        Student GetStudent(int Id);
 
         IEnumerable<Student> getAllStudent();
 
