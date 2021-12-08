@@ -8,6 +8,7 @@ namespace StudentManagement.Modles
     public class MokeStudentInterface : IStudentInterface
     {
         private List<Student> _students;
+
         public MokeStudentInterface()
         {
             _students = new List<Student>() {
@@ -31,6 +32,29 @@ namespace StudentManagement.Modles
         {
             student.Id = _students.Max(s => s.Id) + 1;
             _students.Add(student);
+            return student;
+        }
+
+        public Student Update(Student student)
+        {
+            Student mystudent = _students.FirstOrDefault(s => s.Id == student.Id);
+            if (mystudent != null)
+            {
+                mystudent.Name = student.Name;
+                mystudent.Email = student.Email;
+                mystudent.ClassName = student.ClassName;
+            }
+            return student;
+        }
+
+        public Student Delete(int id)
+        {
+            Student student = _students.FirstOrDefault(s => s.Id == id);
+            if (student != null)
+            {
+                _students.Remove(student);
+            }
+
             return student;
         }
     }

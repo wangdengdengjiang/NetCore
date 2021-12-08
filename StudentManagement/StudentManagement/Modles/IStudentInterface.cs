@@ -15,6 +15,11 @@ namespace StudentManagement.Modles
         IEnumerable<Student> getAllStudent();
 
         Student Add(Student student);
+
+        Student Update(Student student);
+
+        Student Delete(int id); 
+
     }
 
 }

@@ -1,0 +1,10 @@
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement.Dal\bin\Debug\netcoreapp3.1\StudentManagement.Dal.deps.json
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement.Dal\bin\Debug\netcoreapp3.1\StudentManagement.Dal.dll
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement.Dal\bin\Debug\netcoreapp3.1\StudentManagement.Dal.pdb
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement.Dal\obj\Debug\netcoreapp3.1\StudentManagement.Dal.csproj.AssemblyReference.cache
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement.Dal\obj\Debug\netcoreapp3.1\StudentManagement.Dal.GeneratedMSBuildEditorConfig.editorconfig
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement.Dal\obj\Debug\netcoreapp3.1\StudentManagement.Dal.AssemblyInfoInputs.cache
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement.Dal\obj\Debug\netcoreapp3.1\StudentManagement.Dal.AssemblyInfo.cs
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement.Dal\obj\Debug\netcoreapp3.1\StudentManagement.Dal.csproj.CoreCompileInputs.cache
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement.Dal\obj\Debug\netcoreapp3.1\StudentManagement.Dal.dll
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement.Dal\obj\Debug\netcoreapp3.1\StudentManagement.Dal.pdb

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +29,12 @@ namespace StudentManagement
         [Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
+            //使用DB连接服务，使用SqlServer拓展方法，获取SQL server连接字符串
+            //Dbcontext 和DbcontextPool区别： DbContextPool 是一个数据库连接池，如果当前数据库连接池中的连接可用，就可以直接访问池子中的实例，而不会新创建一个实例
+            services.AddDbContextPool<AppDbContext>(
+               optionsAction:options=>options.UseSqlServer(Configuration.GetConnectionString("StudentDbconnecttion"))
+                );
+
             services.AddRazorPages();
             //AddMvcCore 只包含了核心的mvc功能
             //AddMvc 包含了依赖于mvc Core以及相关第三方常用的服务和方法
@@ -35,9 +42,10 @@ namespace StudentManagement
             services.AddScoped<MessageService>();
 
             //依赖注入，将接口和实现关联在一起
+            services.AddScoped<IStudentInterface, SqlStudentInterface>();
             //services.AddSingleton<IStudentInterface, MokeStudentInterface>();
             //services.AddScoped<IStudentInterface, MokeStudentInterface>();
-            services.AddTransient<IStudentInterface, MokeStudentInterface>();
+            //services.AddTransient<IStudentInterface, MokeStudentInterface>();
         }
 
         //中间件：处理和接收http响应的管道
