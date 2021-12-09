@@ -24,5 +24,7 @@ namespace StudentManagement.Modles
         [Display(Name = "邮箱")]
         [RegularExpression(@"^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$", ErrorMessage ="请输入正确格式的邮箱")]
         public string Email { set; get; }
+
+        public string PhotoPath { set; get; }
     }
 }
