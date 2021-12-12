@@ -12,6 +12,7 @@ namespace StudentManagement.Modles
         //默认映射规则：DBset属性名字对应数据库表名；实体类属性对应数据库表列; Id/类名+Id作为主键字段
         public AppDbContext(DbContextOptions<AppDbContext> options) :base(options)
         {
+            
         }
 
         public DbSet<Student> Students { set; get; }

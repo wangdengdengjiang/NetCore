@@ -3,8 +3,10 @@ using StudentManagement.Modles;
 using StudentManagement.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 
 namespace StudentManagement.Controllers
 {
@@ -12,6 +14,8 @@ namespace StudentManagement.Controllers
     public class HomeController : Controller
     {
         private readonly IStudentInterface _studentInterface;
+        private readonly IWebHostEnvironment _hostingEnvironment;
+
         /// <summary>
         /// 构造函数注入的形式注入IStudentInterface
         /// 但是，如果IStudentInterface接口有多个实现类
@@ -19,9 +23,10 @@ namespace StudentManagement.Controllers
         /// 所以要使用依赖注入的方式把接口和实现给绑定起来，计算机才知道使用的是Mock里面的方法
         /// </summary>
         /// <param name="studentInterface"></param>
-        public HomeController(IStudentInterface studentInterface)
+        public HomeController(IStudentInterface studentInterface, IWebHostEnvironment hostingEnvironment)
         {
             _studentInterface = studentInterface;
+            _hostingEnvironment = hostingEnvironment;
         }
 
 
@@ -91,13 +96,50 @@ namespace StudentManagement.Controllers
 
         [HttpPost]
         //public RedirectToActionResult Create(Student student)
-        public IActionResult Create(Student student)
+        public IActionResult Create(StudentCreateViewModel model)
         {
             //属性验证
             if (ModelState.IsValid)
-            { 
-                 Student newStudent = _studentInterface.Add(student);
-                //return RedirectToAction("Details", new { id = newStudent.Id });
+            {
+                string uniqueFileName = null;
+                #region 单文件上传
+                //if (model.Photo != null)
+                //{
+                //  将图片上传到wwwroot目录下的image文件夹中，获取文件夹路径，需要注入ASP.NET Core提供的IWebHostEnvironment服务
+                //  通过IWebHostEnvironment 服务获取wwwroot文件夹的路径
+                //    string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+                //  确保文件芦名氏唯一的，附加一GUID
+                //    uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Photo.FileName;
+                //    string filePath = Path.Combine(uploadsFolder,uniqueFileName);
+                //    model.Photo.CopyTo(new FileStream(filePath, FileMode.Create));
+                //}
+                #endregion
+                #region 多文件上传
+                if (model.Photos != null && model.Photos.Count > 0) 
+                {
+                    foreach (var Photo in model.Photos)
+                    {
+                        //将图片上传到wwwroot目录下的image文件夹中，获取文件夹路径，需要注入ASP.NET Core提供的IWebHostEnvironment服务
+                        //通过IWebHostEnvironment 服务获取wwwroot文件夹的路径
+                        string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+                        //确保文件芦名氏唯一的，附加一GUID
+                        uniqueFileName = Guid.NewGuid().ToString() + "_" + Photo.FileName;
+                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                        Photo.CopyTo(new FileStream(filePath, FileMode.Create));
+                    }
+                }
+                #endregion
+                Student newStudent = new Student
+                {
+                    Name = model.Name,
+                    Email = model.Email,
+                    ClassName = model.ClassName,
+                    PhotoPath = uniqueFileName
+                };
+                _studentInterface.Add(newStudent);
+
+                //Student newStudent = _studentInterface.Add(student);
+                return RedirectToAction("Details", new { id = newStudent.Id });
             }
             return View();
         }
