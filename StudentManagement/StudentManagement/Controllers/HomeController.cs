@@ -77,15 +77,27 @@ namespace StudentManagement.Controllers
         [Route("{id?}")]
         public IActionResult Details(int id)   //会去找同名的视图
         {
+            //throw new Exception("此异常页面出现在Details中");
+
             id = (id.Equals(0)) ? 1 : id;
-            //Student model = _studentInterface.GetStudent(1);
-            HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
+            Student student = _studentInterface.GetStudent(id);
+            if (student != null)
             {
-                //最初id 为int 类型，但是无法实现id ?? 1 ，因为int 不能被赋值为null
-                Student = _studentInterface.GetStudent(id),
-                PageTitle = "学生详情页面"
-            };
-            return View(homeDetailsViewModel); //View是由 Controller 所提供的视图文件
+                //Student model = _studentInterface.GetStudent(1);
+                HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
+                {
+                    //最初id 为int 类型，但是无法实现id ?? 1 ，因为int 不能被赋值为null
+                    Student = _studentInterface.GetStudent(id),
+                    PageTitle = "学生详情页面"
+                };
+                return View(homeDetailsViewModel); //View是由 Controller 所提供的视图文件
+            }
+            else 
+            {
+                Response.StatusCode = 404;
+                return View("StudentNotFound", id);
+            }
+            
         }
 
         [HttpGet]  //区分两个Create，一个get请求，一个post请求
@@ -101,7 +113,7 @@ namespace StudentManagement.Controllers
             //属性验证
             if (ModelState.IsValid)
             {
-                string uniqueFileName = null;
+                string uniqueFileName = UploadPhtotFile(model);
                 #region 单文件上传
                 //if (model.Photo != null)
                 //{
@@ -115,19 +127,19 @@ namespace StudentManagement.Controllers
                 //}
                 #endregion
                 #region 多文件上传
-                if (model.Photos != null && model.Photos.Count > 0) 
-                {
-                    foreach (var Photo in model.Photos)
-                    {
-                        //将图片上传到wwwroot目录下的image文件夹中，获取文件夹路径，需要注入ASP.NET Core提供的IWebHostEnvironment服务
-                        //通过IWebHostEnvironment 服务获取wwwroot文件夹的路径
-                        string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
-                        //确保文件芦名氏唯一的，附加一GUID
-                        uniqueFileName = Guid.NewGuid().ToString() + "_" + Photo.FileName;
-                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                        Photo.CopyTo(new FileStream(filePath, FileMode.Create));
-                    }
-                }
+                //if (model.Photos != null && model.Photos.Count > 0) 
+                //{
+                //    foreach (var Photo in model.Photos)
+                //    {
+                //        //将图片上传到wwwroot目录下的image文件夹中，获取文件夹路径，需要注入ASP.NET Core提供的IWebHostEnvironment服务
+                //        //通过IWebHostEnvironment 服务获取wwwroot文件夹的路径
+                //        string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+                //        //确保文件芦名氏唯一的，附加一GUID
+                //        uniqueFileName = Guid.NewGuid().ToString() + "_" + Photo.FileName;
+                //        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                //        Photo.CopyTo(new FileStream(filePath, FileMode.Create));
+                //    }
+                //}
                 #endregion
                 Student newStudent = new Student
                 {
@@ -143,6 +155,79 @@ namespace StudentManagement.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public ViewResult Edit(int id)
+        {
+            Student student = _studentInterface.GetStudent(id);
+            if (student != null)
+            {
+                StudentEditViewModel studentEditView = new StudentEditViewModel
+                {
+                    Id = student.Id,
+                    Name = student.Name,
+                    Email = student.Email,
+                    ClassName = student.ClassName,
+                    ExistingPhotoPath = student.PhotoPath
+                };
+                return View(studentEditView);
+            }
+            throw new Exception("查询不到学生信息！");
+        }
+
+        [HttpPost]
+        public IActionResult Edit(StudentEditViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Student student = _studentInterface.GetStudent(model.Id);
+                student.Email = model.Email;
+                student.Name = model.Name;
+                student.ClassName = model.ClassName;
+                if (model.Photos.Count > 0)
+                {
+                    if (model.ExistingPhotoPath != null)
+                    {
+                        string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "images", model.ExistingPhotoPath);
+                        System.IO.File.Delete(filePath);
+                    }
+                    student.PhotoPath = UploadPhtotFile(model);
+                }
+                Student newStudent = _studentInterface.Update(student);
+                return RedirectToAction("Details", new { id = model.Id});
+            }
+            else
+            { 
+                return View(model.Id);
+            }
+            
+        }
+        
+        #region 多文件上传
+        private string UploadPhtotFile(StudentCreateViewModel model) 
+        {
+            string uniqueFileName = "";
+            
+            if (model.Photos != null && model.Photos.Count > 0)
+            {
+                foreach (var photo in model.Photos)
+                {
+                    //将图片上传到wwwroot目录下的image文件夹中，获取文件夹路径，需要注入ASP.NET Core提供的IWebHostEnvironment服务
+                    //通过IWebHostEnvironment 服务获取wwwroot文件夹的路径
+                    string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+                    //确保文件名是唯一的，附加一个新的GUID
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    //因为使用了非托管资源、所以需要手动进行释放
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        photo.CopyTo(stream);
+                    }
+                }
+            }
+            return uniqueFileName;
+        }
+        #endregion
 
     }
 }

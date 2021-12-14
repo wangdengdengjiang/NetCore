@@ -13,7 +13,7 @@ namespace StudentManagement.ViewModel
     /// </summary>
     public class StudentCreateViewModel
     {
-        public int Id { set; get; }
+        //public int Id { set; get; }
 
         [Display(Name = "姓名")]  //显式属性，lable中英文变中文
         [Required(ErrorMessage = "请输入名字"), MaxLength(50, ErrorMessage = "名字长度不能超过五十个字符")]

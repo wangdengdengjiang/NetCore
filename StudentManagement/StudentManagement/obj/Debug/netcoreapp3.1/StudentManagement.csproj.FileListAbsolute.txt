@@ -404,3 +404,7 @@ E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug
 E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\StudentManagement.dll
 E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\StudentManagement.pdb
 E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\StudentManagement.genruntimeconfig.cache
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit.cshtml.g.cs
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\StudentNotFound.cshtml.g.cs
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Error\NotFound.cshtml.g.cs
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Error\Error.cshtml.g.cs

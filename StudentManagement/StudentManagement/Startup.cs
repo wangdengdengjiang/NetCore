@@ -63,8 +63,18 @@ namespace StudentManagement
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
+                //app.UseExceptionHandler("/Home/Error");
+                //app.UseHsts();
+
+                //Production环境下
+                app.UseExceptionHandler("/Error"); //拦截异常
+
+                //Storaging环境下
+                //app.UseStatusCodePages();
+                //app.UseStatusCodePagesWithRedirects("/Error/{0}");
+                app.UseStatusCodePagesWithReExecute("/Error/{0}"); //处理没有的页面
+
+
             }
             #endregion
 
@@ -125,12 +135,12 @@ namespace StudentManagement
             #endregion
 
             #region 终端中间件
-            app.Run(async (context) =>
-            {
-                context.Response.ContentType = "text/plain;charset=utf-8";
-                //throw new Exception("您的请求在管道中发生了一些异常，请检查！");  //抓取异常
-                await context.Response.WriteAsync(" Hosting Envirment：  " + env.EnvironmentName);
-            });
+            //app.Run(async (context) =>
+            //{
+            //    context.Response.ContentType = "text/plain;charset=utf-8";
+            //    //throw new Exception("您的请求在管道中发生了一些异常，请检查！");  //抓取异常
+            //    await context.Response.WriteAsync(" Hosting Envirment：  " + env.EnvironmentName);
+            //});
             #endregion
         }
     }
