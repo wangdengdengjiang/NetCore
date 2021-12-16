@@ -1,0 +1,111 @@
+2021-12-14 19:58:24.5609|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\B0098098\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-12-14 19:58:24.7644|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-14 19:58:24.7694|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2021-12-14 19:58:24.7694|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement
+2021-12-14 19:58:24.8117|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44353/  
+2021-12-14 19:58:24.9515|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller StudentManagement.Controllers.HomeController (StudentManagement).
+2021-12-14 19:58:25.0693|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Index.
+2021-12-14 19:58:25.5481|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-12-14 19:58:26.4068|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (36ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[ClassName], [s].[Email], [s].[Name], [s].[PhotoPath]
+FROM [Students] AS [s]
+2021-12-14 19:58:26.5231|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Index executed in 1458.9682ms.
+2021-12-14 19:58:26.5231|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action StudentManagement.Controllers.HomeController.Index (StudentManagement) in 1572.6018ms
+2021-12-14 19:58:26.5449|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44353/_framework/aspnetcore-browser-refresh.js  
+2021-12-14 19:58:26.5449|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1737.7689ms 200 text/html; charset=utf-8
+2021-12-14 19:58:26.5510|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 6.081ms 200 application/javascript; charset=utf-8
+2021-12-14 19:59:46.9382|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\B0098098\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-12-14 19:59:47.0561|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-14 19:59:47.0561|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2021-12-14 19:59:47.0648|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement
+2021-12-14 19:59:47.0648|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44353/  
+2021-12-14 19:59:47.2035|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller StudentManagement.Controllers.HomeController (StudentManagement).
+2021-12-14 19:59:47.3269|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Index.
+2021-12-14 19:59:47.7945|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 5.0.0 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-12-14 19:59:48.3599|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[ClassName], [s].[Email], [s].[Name], [s].[PhotoPath]
+FROM [Students] AS [s]
+2021-12-14 19:59:48.4672|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Index executed in 1147.1685ms.
+2021-12-14 19:59:48.4723|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action StudentManagement.Controllers.HomeController.Index (StudentManagement) in 1263.7954ms
+2021-12-14 19:59:48.4723|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44353/_framework/aspnetcore-browser-refresh.js  
+2021-12-14 19:59:48.4891|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 1412.2762ms 200 text/html; charset=utf-8
+2021-12-14 19:59:48.4891|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 6.5752ms 200 application/javascript; charset=utf-8
+2021-12-14 19:59:50.0933|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44353/  
+2021-12-14 19:59:50.1017|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller StudentManagement.Controllers.HomeController (StudentManagement).
+2021-12-14 19:59:50.1017|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Index.
+2021-12-14 19:59:50.1170|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[ClassName], [s].[Email], [s].[Name], [s].[PhotoPath]
+FROM [Students] AS [s]
+2021-12-14 19:59:50.1170|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Index executed in 17.5573ms.
+2021-12-14 19:59:50.1317|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action StudentManagement.Controllers.HomeController.Index (StudentManagement) in 24.6241ms
+2021-12-14 19:59:50.1317|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 45.7141ms 200 text/html; charset=utf-8
+2021-12-14 19:59:50.1517|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44353/_framework/aspnetcore-browser-refresh.js  
+2021-12-14 19:59:50.1588|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 7.1534ms 200 application/javascript; charset=utf-8
+2021-12-14 19:59:53.1644|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44353/Home/Details/4  
+2021-12-14 19:59:53.1804|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Details", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Details(Int32) on controller StudentManagement.Controllers.HomeController (StudentManagement).
+2021-12-14 19:59:53.2071|ERROR|StudentManagement.Controllers.HomeController|错误(Error) Log 
+2021-12-14 19:59:53.2071|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action StudentManagement.Controllers.HomeController.Details (StudentManagement) in 28.9354ms
+2021-12-14 19:59:53.3125|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-12-14 19:59:53.3207|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Error", controller = "Error"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller StudentManagement.Controllers.ErrorController (StudentManagement).
+2021-12-14 19:59:53.3207|ERROR|StudentManagement.Controllers.ErrorController|路径 = /Home/Details/4， 产生了一个错误 = System.Exception: 此异常页面出现在Details中
+   at StudentManagement.Controllers.HomeController.Details(Int32 id) in E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\Controllers\HomeController.cs:line 89
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-12-14 19:59:53.3345|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Error.
+2021-12-14 19:59:53.3345|INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Error executed in 10.6652ms.
+2021-12-14 19:59:53.3500|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action StudentManagement.Controllers.ErrorController.Error (StudentManagement) in 24.2343ms
+2021-12-14 19:59:53.3500|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 194.4267ms 500 text/html; charset=utf-8
+2021-12-14 19:59:53.3699|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2.0 GET https://localhost:44353/_framework/aspnetcore-browser-refresh.js  
+2021-12-14 19:59:53.3699|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished in 6.7568ms 200 application/javascript; charset=utf-8
+2021-12-14 20:02:44.5067|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-14 20:02:44.5391|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2021-12-14 20:02:44.5391|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement
+2021-12-14 20:02:46.9025|INFO|StudentManagement.Controllers.HomeController|信息（Information）Log
+2021-12-14 20:02:46.9121|ERROR|StudentManagement.Controllers.HomeController|错误(Error) Log 
+2021-12-14 20:02:46.9564|ERROR|Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware|An unhandled exception has occurred while executing the request.
+2021-12-14 20:02:46.9564|ERROR|StudentManagement.Controllers.ErrorController|路径 = /Home/Details/4， 产生了一个错误 = System.Exception: 此异常页面出现在Details中
+   at StudentManagement.Controllers.HomeController.Details(Int32 id) in E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\Controllers\HomeController.cs:line 89
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-12-14 20:03:37.6455|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-14 20:03:37.6808|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Production
+2021-12-14 20:03:37.6897|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement
+2021-12-14 20:03:37.8645|INFO|StudentManagement.Controllers.HomeController|信息（Information）Log
+2021-12-14 20:03:37.8645|ERROR|StudentManagement.Controllers.HomeController|错误(Error) Log 
+2021-12-14 20:03:38.9667|WARN|StudentManagement.Controllers.ErrorController|发生了一个404错误，路径 = /js/CustomScript.js, 以及查询字符串 = 

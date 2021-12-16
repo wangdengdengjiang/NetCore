@@ -134,6 +134,12 @@ namespace StudentManagement
             app.UseMvc();
             #endregion
 
+            app.UseRouting(); //用来检查UseEndpoints中间件是否配置
+            app.UseEndpoints(routes =>
+            {
+                routes.MapControllerRoute("default", pattern:"{controller=Home}/{action=Details}/{id?}");
+            });
+
             #region 终端中间件
             //app.Run(async (context) =>
             //{

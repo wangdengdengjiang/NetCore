@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace StudentManagement.Controllers
 {
@@ -15,6 +16,7 @@ namespace StudentManagement.Controllers
     {
         private readonly IStudentInterface _studentInterface;
         private readonly IWebHostEnvironment _hostingEnvironment;
+        private readonly ILogger _logger;
 
         /// <summary>
         /// 构造函数注入的形式注入IStudentInterface
@@ -23,10 +25,13 @@ namespace StudentManagement.Controllers
         /// 所以要使用依赖注入的方式把接口和实现给绑定起来，计算机才知道使用的是Mock里面的方法
         /// </summary>
         /// <param name="studentInterface"></param>
-        public HomeController(IStudentInterface studentInterface, IWebHostEnvironment hostingEnvironment)
+        public HomeController(IStudentInterface studentInterface, IWebHostEnvironment hostingEnvironment, ILogger<HomeController
+            > logger)
         {
             _studentInterface = studentInterface;
             _hostingEnvironment = hostingEnvironment;
+            _logger = logger;
+
         }
 
 
@@ -77,6 +82,9 @@ namespace StudentManagement.Controllers
         [Route("{id?}")]
         public IActionResult Details(int id)   //会去找同名的视图
         {
+            _logger.LogInformation("信息（Information）Log");
+            _logger.LogError("错误(Error) Log ");
+
             //throw new Exception("此异常页面出现在Details中");
 
             id = (id.Equals(0)) ? 1 : id;

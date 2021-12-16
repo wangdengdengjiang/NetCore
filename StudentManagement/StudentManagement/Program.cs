@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,16 @@ namespace StudentManagement
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>(); //启动（configureservices， configure）
+                })
+                .ConfigureLogging((hostingContext, logging) =>
+                {
+                    logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
+                    logging.AddConsole();
+                    logging.AddDebug();
+                    logging.AddEventSourceLogger();
+                    //启用NLog作为记录日志的程序之一
+                    logging.AddNLog();
+
                 });
-    }
+        };
 }

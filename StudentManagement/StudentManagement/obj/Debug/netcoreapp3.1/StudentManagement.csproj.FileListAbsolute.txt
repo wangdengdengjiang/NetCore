@@ -408,3 +408,7 @@ E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug
 E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\StudentNotFound.cshtml.g.cs
 E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Error\NotFound.cshtml.g.cs
 E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\obj\Debug\netcoreapp3.1\Razor\Views\Error\Error.cshtml.g.cs
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\bin\Debug\netcoreapp3.1\nlog.config
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\bin\Debug\netcoreapp3.1\NLog.dll
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+E:\2_CodeLearn_Danielle\GitHubCode\StudentManagement\StudentManagement\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
